@@ -3,15 +3,15 @@ export default function applyDayNightTheme() {
 
   if (time < 16) {
     document.body.style.background =
-      "linear-gradient(to bottom, #0084ff, #009dff, #00d5ff)";
-    document.documentElement.style.setProperty("--text-color", "#000");
+      "linear-gradient(to bottom, #87CEEB, #B0E0E6)";
+    document.documentElement.style.setProperty("--text-color", "#2F4F4F");
   } else if (time < 19) {
     document.body.style.background =
-      "linear-gradient(to bottom, #ff6a00, orange, #ffcc00)";
-    document.documentElement.style.setProperty("--text-color", "#000");
+      "linear-gradient(to bottom, #a8e6cf, #dcedc1, #ffd180)";
+    document.documentElement.style.setProperty("--text-color", "#2F4F4F");
   } else {
     document.body.style.background =
-      "linear-gradient(to bottom, #001181, #003b89, #00658a)";
-    document.documentElement.style.setProperty("--text-color", "#fafafa");
+      "linear-gradient(to bottom, #2C3E50, #34495E, #1A252F)";
+    document.documentElement.style.setProperty("--text-color", "#ECF0F1");
   }
 }
