@@ -2,69 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image" href="/public/icon.webp" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>weather</title>
-    <link rel="stylesheet" href="./src/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <title>React Weather app</title>
   </head>
   <body>
-    <nav>
-      <button id="loacation-btn">
-        <i class="fa-solid fa-location-dot"></i>
-      </button>
-      <input type="text" id="search-inp" placeholder="Search..." />
-    </nav>
-
-    <!-- today's weather -->
-    <div id="head">
-      <div id="loacation">----</div>
-      <img src="#" id="weather-icon" alt="" />
-      <p id="temperture" class="temperture">0</p>
-
-      <div class="info">
-        <span>
-          <i class="fa-solid fa-fire"></i>
-          <span id="max-temp" class="temperture">0</span>
-        </span>
-        <span>
-          <i class="fa-solid fa-snowflake"></i>
-          <span id="min-temp" class="temperture">0</span>
-        </span>
-
-        <span
-          ><i class="fa-solid fa-wind"></i>
-          <span id="wind-speed">0</span>/ms</span
-        >
-        <span
-          ><i class="fa-solid fa-droplet"></i>
-          <span id="humidity">0</span>%</span
-        >
-      </div>
-    </div>
-
-    <!-- future's weather -->
-    <div class="container">
-      <!-- each day -->
-      <!-- <div class="future-weather">
-        <div class="child">
-          <img
-            src="https://img.icons8.com/3d-fluency/94/partly-cloudy-day.png"
-            class="future-weather-icon"
-          />
-          <p>sun</p>
-          <p class="temperture">20</p>
-        </div> -->
-    </div>
-
-    <script type="module" src="/src/main.js"></script>
-    <script type="module" src="/src/utils/helper.js"></script>
-    <script type="module" src="/src/utils/httpRequest.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
