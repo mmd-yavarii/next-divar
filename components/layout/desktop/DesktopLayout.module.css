@@ -4,10 +4,73 @@
 
 /* nav */
 .nav {
-  background-color: var(--secondry-background-color);
+  background-color: var(--background-color);
   padding: 10px;
+  box-shadow: 2px 1px 3px #00000029;
   position: sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+.nav > div {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+.nav > div:first-child {
+  flex: 1;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  border-left: 1.5px solid var(--border-color);
+}
+
+.buttons {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+.buttons button,
+.buttons p {
+  width: fit-content;
+  font-weight: 700;
+  color: var(--secondry-text-color);
+}
+.buttons:hover {
+  background-color: var(--secondry-background-color);
+}
+
+.search {
+  max-width: 460px;
+  width: 100%;
+  background-color: var(--them-background-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.addNew {
+  background-color: var(--them-color);
+  color: #fff;
+  height: 100%;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: 900;
 }
 
 @media (min-width: 600px) {

@@ -1,7 +1,6 @@
 import styles from './MobileLayout.module.css';
 
 import { GrLocation } from 'react-icons/gr';
-import { IoSearch } from 'react-icons/io5';
 import { FaArrowRight } from 'react-icons/fa';
 
 import { AiOutlineHome, AiFillHome } from 'react-icons/ai';
@@ -12,6 +11,7 @@ import { FaRegUser, FaUserAlt } from 'react-icons/fa';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import SearchInp from '@/components/modules/SearchInp';
 
 function MobileLayout({ location, children }) {
   const router = useRouter();
@@ -24,10 +24,7 @@ function MobileLayout({ location, children }) {
         </button>
 
         <div className={styles.mobileNav}>
-          <div>
-            <input type="text" placeholder="جست و جو در همه آگهی ها " />
-            <IoSearch opacity="0.5" />
-          </div>
+          <SearchInp />
 
           <div>
             <button>{location}</button>

@@ -1,10 +1,53 @@
+import Link from 'next/link';
+
 import styles from './DesktopLayout.module.css';
+
+import { GrLocation } from 'react-icons/gr';
+import { FaRegUser } from 'react-icons/fa';
+import { GrSupport } from 'react-icons/gr';
+import { HiOutlineChat } from 'react-icons/hi';
+
+import SearchInp from '@/components/modules/SearchInp';
 
 function DesktopLayout({ location, children }) {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <h1>hello</h1>
+        <div>
+          <Link href="/" className={styles.logo}>
+            <img src="./textLogo.svg" width="50px" alt="" />
+          </Link>
+
+          <div className={styles.buttons}>
+            <GrLocation opacity="0.5" />
+            <button>{location}</button>
+          </div>
+
+          <div className={styles.buttons}>
+            <FaRegUser opacity="0.5" />
+            <button>دیوار من</button>
+          </div>
+
+          <div className={styles.search}>
+            <SearchInp />
+          </div>
+        </div>
+
+        <div>
+          <Link href="" className={styles.buttons}>
+            <HiOutlineChat opacity="0.5" />
+            <p>چت</p>
+          </Link>
+
+          <Link href="" className={styles.buttons}>
+            <GrSupport opacity="0.5" />
+            <p>پشتیبانی</p>
+          </Link>
+
+          <Link href="" className={styles.addNew}>
+            ثبت آگهی
+          </Link>
+        </div>
       </nav>
 
       {children}
