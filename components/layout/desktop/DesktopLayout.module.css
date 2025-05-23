@@ -1,0 +1,17 @@
+.container {
+  display: none;
+}
+
+/* nav */
+.nav {
+  background-color: var(--secondry-background-color);
+  padding: 10px;
+  position: sticky;
+  top: 0;
+}
+
+@media (min-width: 600px) {
+  .container {
+    display: block;
+  }
+}
