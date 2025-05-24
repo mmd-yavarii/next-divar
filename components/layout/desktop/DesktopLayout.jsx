@@ -15,7 +15,7 @@ function DesktopLayout({ location, children }) {
       <nav className={styles.nav}>
         <div>
           <Link href="/" className={styles.logo}>
-            <img src="./textLogo.svg" width="50px" alt="" />
+            <img src="../textLogo.svg" width="50px" alt="" />
           </Link>
 
           <div className={styles.buttons}>

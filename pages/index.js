@@ -1,9 +1,16 @@
-import { BeatLoader } from 'react-spinners';
+import { useCityLocation } from '@/context/LocationProvider';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function Home() {
-  return (
-    <>
-      <BeatLoader size="0.5rem" margin="3px" color="#a62626" className="loader" />
-    </>
-  );
+  const [location, setLocation] = useCityLocation();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (location) {
+      router.replace(`/${location}`);
+    }
+  }, [location, router]);
+
+  return <></>;
 }

@@ -34,7 +34,7 @@ a {
 .loader {
   display: block;
   text-align: center;
-  margin: auto;
+  margin: 15px auto;
 }
 
 input,
@@ -68,5 +68,11 @@ a {
   button,
   a {
     cursor: default;
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: 70px;
   }
 }

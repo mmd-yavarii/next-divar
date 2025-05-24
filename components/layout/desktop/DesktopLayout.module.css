@@ -50,6 +50,7 @@
 .buttons p {
   width: fit-content;
   font-weight: 700;
+  min-width: 70px;
   color: var(--secondry-text-color);
 }
 .buttons:hover {

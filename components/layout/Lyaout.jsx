@@ -7,8 +7,8 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <MobileLayout location={location} />
-      <DesktopLayout location={location} />
+      <MobileLayout location={location} children={children} />
+      <DesktopLayout location={location} children={children} />
     </>
   );
 }

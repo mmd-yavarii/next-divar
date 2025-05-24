@@ -15,6 +15,7 @@ import SearchInp from '@/components/modules/SearchInp';
 
 function MobileLayout({ location, children }) {
   const router = useRouter();
+  const path = router.pathname;
 
   return (
     <div className={styles.container}>
@@ -36,28 +37,28 @@ function MobileLayout({ location, children }) {
       {children}
 
       <footer className={styles.footer}>
-        <Link href="/" className={`${router.asPath == '/' && styles.active} ${styles.links}`}>
-          {router.asPath == '/' ? <AiFillHome /> : <AiOutlineHome />}
+        <Link href="/" className={`${path == '/[...productList]' && styles.active} ${styles.links}`}>
+          {path == '/' ? <AiFillHome /> : <AiOutlineHome />}
           <span>آگهی ها</span>
         </Link>
 
-        <Link href="" className={`${router.asPath == '//' && styles.active} ${styles.links}`}>
-          {router.asPath == '//' ? <FaBookmark /> : <FaRegBookmark />}
+        <Link href="" className={`${path == '//' && styles.active} ${styles.links}`}>
+          {path == '//' ? <FaBookmark /> : <FaRegBookmark />}
           <span>نشان ها</span>
         </Link>
 
-        <Link href="" className={`${router.asPath == '//' && styles.active} ${styles.links}`}>
-          {router.asPath == '//' ? <IoMdAddCircle /> : <IoMdAddCircleOutline />}
+        <Link href="" className={`${path == '//' && styles.active} ${styles.links}`}>
+          {path == '//' ? <IoMdAddCircle /> : <IoMdAddCircleOutline />}
           <span>ثبت اگهی</span>
         </Link>
 
-        <Link href="" className={`${router.asPath == '//' && styles.active} ${styles.links}`}>
-          {router.asPath == '//' ? <HiChat /> : <HiOutlineChat />}
+        <Link href="" className={`${path == '//' && styles.active} ${styles.links}`}>
+          {path == '//' ? <HiChat /> : <HiOutlineChat />}
           <span>چت</span>
         </Link>
 
-        <Link href="" className={`${router.asPath == '//' && styles.active} ${styles.links}`}>
-          {router.asPath == '//' ? <FaUserAlt /> : <FaRegUser />}
+        <Link href="" className={`${path == '//' && styles.active} ${styles.links}`}>
+          {path == '//' ? <FaUserAlt /> : <FaRegUser />}
           <span>دیوار من</span>
         </Link>
       </footer>
