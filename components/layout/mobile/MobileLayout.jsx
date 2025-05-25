@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import SearchInp from '@/components/modules/SearchInp';
 
-function MobileLayout({ location, children }) {
+function MobileLayout({ changeProvince, location, children }) {
   const router = useRouter();
   const path = router.pathname;
 
@@ -27,7 +27,7 @@ function MobileLayout({ location, children }) {
         <div className={styles.mobileNav}>
           <SearchInp />
 
-          <div>
+          <div onClick={changeProvince}>
             <button>{location}</button>
             <GrLocation opacity="0.5" />
           </div>

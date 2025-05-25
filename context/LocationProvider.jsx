@@ -2,12 +2,13 @@ import { createContext, useContext, useState } from 'react';
 
 const LocationContext = createContext();
 
-const initialState = 'کل ایران';
+const initialState = 'کرمانشاه';
 
 export default function LocationProvider({ children }) {
   const [state, setState] = useState(initialState);
+  const [isModalOpen, setSsModalOpen] = useState(true);
 
-  return <LocationContext.Provider value={[state, setState]}>{children}</LocationContext.Provider>;
+  return <LocationContext.Provider value={[state, setState, isModalOpen, setSsModalOpen]}>{children}</LocationContext.Provider>;
 }
 
 export function useCityLocation() {

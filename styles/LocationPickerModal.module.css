@@ -1,0 +1,96 @@
+.modalBackground {
+  background-color: #00000047;
+  width: 100vw;
+  height: 100vh;
+  z-index: 19;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 5px;
+  height: 90vh;
+  background-color: var(--secondry-background-color);
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search {
+  border-radius: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--border-color);
+}
+.search input {
+  border: none;
+}
+.search input::placeholder {
+  font-weight: 900;
+}
+
+.provinceContainer {
+  flex: 1;
+  overflow: scroll;
+}
+
+.provinces,
+.selected {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  text-align: start;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.selected::after {
+  content: '✔';
+  color: #fff;
+  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--them-color);
+  width: 18px;
+  height: 18px;
+  border-radius: 2px;
+}
+
+.btnContainer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+.btnContainer button {
+  background-color: inherit;
+  border: 1px solid var(--secondry-text-color);
+  color: var(--secondry-text-color);
+  font-weight: 900;
+  width: 100%;
+  padding: 5px;
+}
+.btnContainer button:last-child {
+  color: #fff;
+  border-color: var(--them-color);
+  background-color: var(--them-color);
+}
+
+@media (max-width: 700px) {
+  .modal {
+    width: 100vw;
+    height: 100dvh;
+  }
+}

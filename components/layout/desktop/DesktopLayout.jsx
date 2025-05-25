@@ -9,7 +9,7 @@ import { HiOutlineChat } from 'react-icons/hi';
 
 import SearchInp from '@/components/modules/SearchInp';
 
-function DesktopLayout({ location, children }) {
+function DesktopLayout({ changeProvince, location, children }) {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
@@ -18,15 +18,15 @@ function DesktopLayout({ location, children }) {
             <img src="../textLogo.svg" width="50px" alt="" />
           </Link>
 
-          <div className={styles.buttons}>
+          <button onClick={changeProvince} className={styles.buttons}>
             <GrLocation opacity="0.5" />
-            <button>{location}</button>
-          </div>
+            <p>{location}</p>
+          </button>
 
-          <div className={styles.buttons}>
+          <Link href="" className={styles.buttons}>
             <FaRegUser opacity="0.5" />
-            <button>دیوار من</button>
-          </div>
+            <p>دیوار من</p>
+          </Link>
 
           <div className={styles.search}>
             <SearchInp />
