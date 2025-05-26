@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+}
+
+/* info */
+.info {
+  padding: 10px;
+  width: 100%;
+}
+.info div {
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+}
+.title {
+  font-size: 1.3rem;
+  margin-bottom: 1px;
+}
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.controllers {
+  display: flex;
+  align-content: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.controllers div {
+  border: 0;
+  display: flex;
+  gap: 20px;
+}
+.controllers > button {
+  background-color: var(--them-color);
+  padding: 5px 10px;
+  color: var(--background-color);
+}
+
+/* image  */
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.mainImage {
+  width: 100%;
+  height: 342px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--them-background-color);
+  position: relative;
+}
+.mainImage img {
+  height: 100%;
+}
+.mainImage div {
+  background-color: #ffffff46;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  color: #fff;
+  font-size: 5rem;
+}
+.mainImage div:first-child {
+  right: 0;
+}
+.mainImage div:last-child {
+  left: 0;
+}
+.imageCounter {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #fff;
+  border-radius: 2px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 10px;
+}
+
+.otherImagesContainer {
+  display: flex;
+  align-content: center;
+  gap: 10px;
+}
+.moreIamges {
+  width: 62px;
+  height: 62px;
+  border-radius: 5px;
+  opacity: 0.7;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--them-background-color);
+  display: none;
+}
+.moreIamges img {
+  height: 100%;
+}
+.selected {
+  opacity: 1;
+}
+
+@media (min-width: 700px) {
+  .container {
+    padding: 20px;
+    flex-direction: row;
+    max-width: 1100px;
+    gap: 50px;
+    margin: auto;
+  }
+  .mainImage {
+    width: 456px;
+    border-radius: 5px;
+  }
+  .moreIamges {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .moreIamges:hover {
+    opacity: 0.8;
+  }
+  .mainImage div {
+    cursor: pointer;
+  }
+  .moreIamges {
+    display: flex;
+  }
+}

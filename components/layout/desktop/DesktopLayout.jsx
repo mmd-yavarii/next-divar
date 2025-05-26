@@ -14,7 +14,7 @@ function DesktopLayout({ changeProvince, location, children }) {
     <div className={styles.container}>
       <nav className={styles.nav}>
         <div>
-          <Link href="/" className={styles.logo}>
+          <Link href={`/${location}`} className={styles.logo}>
             <img src="../textLogo.svg" width="50px" alt="" />
           </Link>
 

@@ -11,6 +11,7 @@ import {
   MdWork,
 } from 'react-icons/md';
 
+// all categories
 export const categories = [
   { id: 1, name: 'املاک', icon: MdHome },
   { id: 2, name: 'وسایل نقلیه', icon: MdDirectionsCar },
@@ -24,6 +25,7 @@ export const categories = [
   { id: 10, name: 'استخدام و کاریابی', icon: MdWork },
 ];
 
+// all provinces
 export const iranProvinces = [
   { id: 1, name: 'آذربایجان شرقی' },
   { id: 2, name: 'آذربایجان غربی' },
@@ -57,3 +59,33 @@ export const iranProvinces = [
   { id: 30, name: 'همدان' },
   { id: 31, name: 'یزد' },
 ];
+
+// calculating past time to present
+export function timeSince(date) {
+  const now = new Date();
+  const timestamp = new Date(date).getTime();
+
+  const diffInSeconds = Math.floor((now - timestamp) / 1000);
+
+  const isOverOneYear = diffInSeconds > 31622400;
+  const isOverOneMonth = diffInSeconds > 2629746;
+  const isOverOneWeek = diffInSeconds > 604800;
+  const isOverOneDay = diffInSeconds > 86400;
+  const isOverOneHour = diffInSeconds > 3600;
+
+  let result = 'دقایقی پیش';
+
+  if (isOverOneYear) {
+    result = 'بیش از یک سال پیش';
+  } else if (isOverOneMonth) {
+    result = 'بیش از یک ماه پیش';
+  } else if (isOverOneWeek) {
+    result = 'بیش از یک هفته پیش';
+  } else if (isOverOneDay) {
+    result = 'بیش از یک روز پیش';
+  } else if (isOverOneHour) {
+    result = 'بیش از یک ساعت پیش';
+  }
+
+  return result;
+}
