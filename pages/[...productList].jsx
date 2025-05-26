@@ -7,7 +7,7 @@ export default function ProductsList({ products }) {
       <ProductListTemplate products={products} />
 
       <div className="loader">
-        <BeatLoader size={10} margin={3} color="#a62626" />
+        <BeatLoader size={10} color="#a62626" />
       </div>
     </>
   );
@@ -15,26 +15,24 @@ export default function ProductsList({ products }) {
 
 export async function getServerSideProps(context) {
   const { params } = context;
-
-  const city = params.productList[0];
-  const category = params.productList[1];
+  const city = params.productList?.[0] || 'تهران';
+  const category = params.productList?.[1] || null;
 
   try {
-    const response = await fetch('https://next-diver-api.vercel.app/products');
-    const json = await response.json();
-    const sorted = json.sort((a, b) => {
-      const A = new Date(a.date);
-      const B = new Date(b.date);
-      return B - A;
-    });
+    const url = category
+      ? `https://next-diver-api.vercel.app/products?location=${city}&category=${category}`
+      : `https://next-diver-api.vercel.app/products?location=${city}`;
 
+    const response = await fetch(url);
+    const json = await response.json();
+    const sorted = json.sort((a, b) => new Date(b.date) - new Date(a.date));
     return {
       props: {
         products: sorted,
       },
     };
   } catch (error) {
-    console.error('Error fetching users:', error);
+    console.error('Error fetching products:', error);
     return {
       props: {
         products: [],

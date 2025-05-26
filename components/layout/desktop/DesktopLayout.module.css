@@ -48,6 +48,7 @@
 }
 .buttons button,
 .buttons p {
+  text-align: start;
   width: fit-content;
   font-weight: 700;
   min-width: 70px;

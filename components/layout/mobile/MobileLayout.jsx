@@ -20,9 +20,11 @@ function MobileLayout({ changeProvince, location, children }) {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <button onClick={() => router.back()}>
-          <FaArrowRight />
-        </button>
+        {router.pathname !== '/[...productList]' && (
+          <button onClick={() => router.back()}>
+            <FaArrowRight />
+          </button>
+        )}
 
         <div className={styles.mobileNav}>
           <SearchInp />
