@@ -7,9 +7,13 @@ import { FaRegBookmark, FaBookmark } from 'react-icons/fa';
 import { LuShare2 } from 'react-icons/lu';
 
 import { useRouter } from 'next/router';
+import { useBookmark } from '@/context/BookmarkProvider';
 
-function ProductDetailTemplate({ image, title, date, price, description }) {
+function ProductDetailTemplate({ info }) {
+  const { id, image, title, date, price, description } = info;
   const router = useRouter();
+  const [bookmaarks, dispatchBookmarks, checkIsBookmark] = useBookmark();
+  const isBookmark = checkIsBookmark(id);
 
   // share page handler
   function sharePage(title, text, url) {
@@ -28,7 +32,13 @@ function ProductDetailTemplate({ image, title, date, price, description }) {
   }
 
   // bookmark product handler
-  function bookmarkHandler() {}
+  function bookmarkHandler() {
+    if (isBookmark) {
+      dispatchBookmarks({ type: 'REMOVE', payload: info });
+    } else {
+      dispatchBookmarks({ type: 'ADD', payload: info });
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -41,7 +51,7 @@ function ProductDetailTemplate({ image, title, date, price, description }) {
         <div className={styles.controllers}>
           <button>اطلاعات تماس</button>
           <div>
-            <button>{false ? <FaBookmark /> : <FaRegBookmark />}</button>
+            <button onClick={bookmarkHandler}>{isBookmark ? <FaBookmark /> : <FaRegBookmark />}</button>
             <button onClick={sharePage}>
               <LuShare2 />
             </button>

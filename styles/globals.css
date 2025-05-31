@@ -11,6 +11,11 @@
   --border-color: #ebebeb;
 }
 
+html {
+  max-width: 1300px;
+  margin: auto;
+}
+
 body {
   color: var(--text-color);
   background: var(--background-color);

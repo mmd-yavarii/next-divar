@@ -17,7 +17,6 @@ function LocationPickerModal() {
   // close modal handler
   function closeModal() {
     setSsModalOpen(false);
-    router.replace(`/${province}`);
   }
 
   // set new province handler

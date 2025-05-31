@@ -12,7 +12,7 @@ export default function ProductDetails(props) {
       </div>
     );
   }
-  return <ProductDetailTemplate {...props} />;
+  return <ProductDetailTemplate info={props.info} />;
 }
 
 export async function getStaticPaths() {
@@ -30,10 +30,13 @@ export async function getStaticProps(context) {
     const response = await fetch(`https://next-diver-api.vercel.app/products/${productId}`);
     const json = await response.json();
     return {
-      props: json,
+      props: { info: json },
       revalidate: 600,
     };
   } catch (error) {
     console.error(error);
   }
+  return {
+    props: { info: {} },
+  };
 }
